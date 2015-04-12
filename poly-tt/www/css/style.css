@@ -1,0 +1,314 @@
+.body{
+	font-family: 'Oswald';
+}
+
+
+
+.home-screen{
+	background-color: #00BCD4;
+	color: white;
+
+}
+
+.full{
+height:100%;
+
+}
+
+.logo-container{
+	text-align: center;
+	text-shadow: 1px 1px 4px rgba(109, 109, 109, 0.59);
+}
+
+.logo-icon{
+	padding-top: 50%;
+	font-size: 180px;
+}
+
+.logo-text{
+	margin-top: 8px;
+	font-size: 32pt;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+}
+
+.footer-wrapper{
+	position: absolute;
+	left:0;
+	width: 100%;
+	bottom: 0px;
+}
+
+.button-container{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.form-container{
+	margin: 20px;
+}
+
+.button-noborder{
+	border-style: none;
+}
+
+.icon-margin{
+	margin-right: 3px;
+}
+
+.waiting{
+	
+}
+
+.button{
+	font-family: 'Oswald';
+	font-size: 14pt;
+	font-weight: 400;
+	line-height: 35pt;
+}
+
+
+.bar{
+	font-family: 'Oswald';
+	font-size: 16pt;
+}
+
+.icon-margin{
+	margin-top:8px !important;
+}
+
+.icon-right{
+	margin-right: 8px;
+}
+
+.list{
+	font-family: 'Oswald';
+	font-weight: 300;
+}
+
+.item-divider{
+
+}
+
+
+ion-popover-view.fit {
+  height: auto !important;
+}
+
+ion-popover-view.fit ion-content {
+  position: relative !important;
+}
+
+.platform-android ion-popover-view.fit {
+  margin-top: 10px !important;
+}
+
+.tcard{
+	margin-top: 10px;
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+.time-card{
+	padding: 0px;
+	height: 44px;
+	font-size: 10pt;
+	font-weight: 300;
+	font-family: 'Oswald';
+
+}
+
+.vertical-bar{
+	width: 8px;
+	height: 44px;
+
+}
+
+
+.class-detail{
+	padding-left: 3px !important;
+}
+.time-card .col{
+	padding: 0px;
+
+	
+}
+
+.time-card .row{
+	padding: 0px;
+}
+
+.col .row{
+	padding: 2px;
+}
+
+
+.time{
+	display: inline;
+	margin-right: 10px;
+	color: #757575;
+}
+
+.teacher{
+	display: inline;
+}
+
+.course-name{
+	font-weight: 400;
+	display: inline;
+}
+
+.venue{
+
+	text-align: right;
+	padding-right: 5px !important;
+}
+
+.type{
+	text-align: right;
+	color: #9E9E9E;
+	padding-right: 5px !important;
+}
+
+.day{
+	padding-top: 10px;
+	text-align: center;
+	color: #757575;
+	font-size: 11pt;
+	font-family: 'Oswald';
+}
+
+.slider{
+	height: 100%;
+}
+
+.slider-slide {
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  
+  height: 100%;
+}
+
+.title{
+	font-family: "Oswald";
+}
+
+.detail-div{
+	text-align: left;
+	font-weight: 300;
+	font-size: 10pt;
+	padding-top: 3px;
+	padding-bottom: 3px;
+
+}
+
+.detail{
+	font-weight: 300;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+
+.hiding{
+	height: 0px !important;
+}
+
+.hiding .sldbox{
+	height: 0px !important;
+}
+
+
+
+
+
+/*
+
+*/
+
+
+.network{
+	background-color: #F44336;
+	border: 1px solid #B04E47;
+}
+
+.vi{
+	background-color: #009688;
+	border: 1px solid #149589;
+}
+
+.os{
+	background-color: #2196F3;
+	border: 1px solid #2373B2;
+}
+
+.cm{
+	background-color: #E91E63;
+	border: 1px solid #AC194B;
+}
+
+.db{
+	background-color: #FF9800;
+	border: 1px solid #A06713;
+}
+
+.wc{
+	background-color: #33691E;
+	border: 1px solid #295817;
+}
+
+.course {
+}
+
+
+
+table {
+  font-family: 'Oswald';
+  color: #efefef;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+tr:nth-child(even) {
+    background-color: #E0F7FA;
+}
+
+table th, table td {
+  vertical-align: middle;
+}
+
+
+
+table td:active{
+    opacity: 0.6;
+    
+}
+
+
+.days, .period {
+  background: #00BCD4;
+  font-size: 9pt;
+  text-align: center;
+  color: white;
+}
+
+.period{
+	vertical-align: top;
+	line-height: 0px;
+	padding-top: 0px;
+	width: 15px !important;
+	padding: 2px;
+}
+
+.hiding .ttble{
+	display: none;
+}
+
+.ttble{
+	width: 100%;
+}

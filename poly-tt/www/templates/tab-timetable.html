@@ -1,0 +1,362 @@
+
+<ion-view title="PODULER" ng-controller="TableCtrl">
+<ion-nav-bar class="bar-calm">
+<ion-nav-buttons side="right"> <button class="button button-clear icon-right" ng-click="popover.show($event)"><i class="fa fa-toggle-on"></i></button></ion-nav-buttons>
+</ion-nav-bar>
+<!--<ion-nav-bar class="bar-calm">
+	<ion-nav-buttons side="right">
+      <button class="button button-clear icon-right" ng-click="popover.show($event)"><i class="fa fa-toggle-on"></i>
+      </ion-nav-bar>-->
+
+<!--<div class="bar bar-calm">
+  <div class="title" >PODULER</div>  
+   
+</div>-->
+
+
+
+<ion-content scroll="false">
+
+<!--
+<div class="day">MONDAY</div>
+
+	<div class="card tcard" ng-repeat="course in mon_courses">
+	<a class="item item-text-wrap time-card" href="#">
+		<div class="row nop">
+			<div class="vertical-bar" style="background-color: {{course.color}}">
+
+			</div>
+
+
+			<div class="col class-detail">
+
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.start}}</div>
+						<div class="teacher">
+							<i class="fa fa-user" style="font-size: 9pt;"></i> 
+							{{course.staff}}
+						</div>
+					</div>
+					<div class="col col-25 venue">{{course.venue}}</div>
+				</div>
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.end}}</div>
+						<div class="course-name">
+							{{course.course_name}}
+						</div>
+					</div>
+					<div class="col col-25 type">{{course.type}}</div>
+				</div>
+
+			</div>
+		</div>
+	</a>
+</div>
+-->
+
+<div class="{{is_daily()}}">
+	<ion-slide-box show-pager="true" on-slide-changed="slideChanged(index)" style="height: {{h}}px" class="sldbox">
+
+
+	<ion-slide>
+	<div class="day">MONDAY</div>
+
+	<div class="card tcard" ng-repeat="course in mon_courses" ng-if="course.day == 'Mon'">
+		<a class="item item-text-wrap time-card" href="#" ng-click="openModal(course)">
+			<div class="row nop">
+				<div class="vertical-bar" style="background-color: {{course.color}}">
+
+				</div>
+
+
+				<div class="col class-detail">
+
+
+					<div class="row">
+						<div class="col col-75">
+							<div class="time">{{course.start}}</div>
+							<div class="teacher">
+								<i class="fa fa-user" style="font-size: 9pt;"></i> 
+								{{course.staff}}
+							</div>
+						</div>
+						<div class="col col-25 venue">{{course.venue}}</div>
+					</div>
+
+					<div class="row">
+						<div class="col col-75">
+							<div class="time">{{course.end}}</div>
+							<div class="course-name">
+								{{course.course_name}}
+							</div>
+						</div>
+						<div class="col col-25 type">{{course.type}}</div>
+					</div>
+
+				</div>
+			</div>
+		</a>
+	</div>
+
+
+
+</ion-slide>
+
+<ion-slide>
+<div class="day">TUESDAY</div>
+
+<div class="card tcard" ng-repeat="course in mon_courses" ng-if="course.day == 'Tue'">
+	<a class="item item-text-wrap time-card" href="#" ng-click="openModal(course)">
+		<div class="row nop">
+			<div class="vertical-bar" style="background-color: {{course.color}}">
+
+			</div>
+
+
+			<div class="col class-detail">
+
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.start}}</div>
+						<div class="teacher">
+							<i class="fa fa-user" style="font-size: 9pt;"></i> 
+							{{course.staff}}
+						</div>
+					</div>
+					<div class="col col-25 venue">{{course.venue}}</div>
+				</div>
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.end}}</div>
+						<div class="course-name">
+							{{course.course_name}}
+						</div>
+					</div>
+					<div class="col col-25 type">{{course.type}}</div>
+				</div>
+
+			</div>
+		</div>
+	</a>
+</div>
+
+
+
+</ion-slide>
+
+<ion-slide>
+<div class="day">WEDNESDAY</div>
+
+<div class="card tcard" ng-repeat="course in mon_courses" ng-if="course.day == 'Wed'">
+	<a class="item item-text-wrap time-card" href="#" ng-click="openModal(course)">
+		<div class="row nop">
+			<div class="vertical-bar" style="background-color: {{course.color}}">
+
+			</div>
+
+
+			<div class="col class-detail">
+
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.start}}</div>
+						<div class="teacher">
+							<i class="fa fa-user" style="font-size: 9pt;"></i> 
+							{{course.staff}}
+						</div>
+					</div>
+					<div class="col col-25 venue">{{course.venue}}</div>
+				</div>
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.end}}</div>
+						<div class="course-name">
+							{{course.course_name}}
+						</div>
+					</div>
+					<div class="col col-25 type">{{course.type}}</div>
+				</div>
+
+			</div>
+		</div>
+	</a>
+</div>
+
+
+
+</ion-slide>
+
+<ion-slide>
+<div class="day">THURSDAY</div>
+
+<div class="card tcard" ng-repeat="course in mon_courses" ng-if="course.day == 'Thu'">
+	<a class="item item-text-wrap time-card" href="#" ng-click="openModal(course)">
+		<div class="row nop">
+			<div class="vertical-bar" style="background-color: {{course.color}}">
+
+			</div>
+
+
+			<div class="col class-detail">
+
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.start}}</div>
+						<div class="teacher">
+							<i class="fa fa-user" style="font-size: 9pt;"></i> 
+							{{course.staff}}
+						</div>
+					</div>
+					<div class="col col-25 venue">{{course.venue}}</div>
+				</div>
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.end}}</div>
+						<div class="course-name">
+							{{course.course_name}}
+						</div>
+					</div>
+					<div class="col col-25 type">{{course.type}}</div>
+				</div>
+
+			</div>
+		</div>
+	</a>
+</div>
+
+
+
+</ion-slide>
+
+<ion-slide>
+<div class="day">FRIDAY</div>
+
+<div class="card tcard" ng-repeat="course in mon_courses" ng-if="course.day == 'Fri'">
+	<a class="item item-text-wrap time-card" href="#" ng-click="openModal(course)">
+		<div class="row nop">
+			<div class="vertical-bar" style="background-color: {{course.color}}">
+
+			</div>
+
+
+			<div class="col class-detail">
+
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.start}}</div>
+						<div class="teacher">
+							<i class="fa fa-user" style="font-size: 9pt;"></i> 
+							{{course.staff}}
+						</div>
+					</div>
+					<div class="col col-25 venue">{{course.venue}}</div>
+				</div>
+
+				<div class="row">
+					<div class="col col-75">
+						<div class="time">{{course.end}}</div>
+						<div class="course-name">
+							{{course.course_name}}
+						</div>
+					</div>
+					<div class="col col-25 type">{{course.type}}</div>
+				</div>
+
+			</div>
+		</div>
+	</a>
+</div>
+
+
+
+</ion-slide>
+
+
+</ion-slide-box>
+
+</div>
+
+<div class="{{is_weekly()}}">
+
+<table style="height: {{h+8}}px;" class="ttble">
+    <tr class="days" style="height: 15px;">
+    	<td></td>
+        <td>MON</td>
+        <td>TUE</td>
+        <td>WED</td>
+        <td>THU</td>
+        <td>FRI</td>
+    </tr>
+    <tr>
+        <td class="period">08:30</td>
+        <td class="course network" ng-click="openModal(mon_courses[0])">COMP2332</td>
+        <td class="course db" rowspan="3" ng-click="openModal(mon_courses[4])" >COMP2411</td>
+        <td></td>
+        <td></td>
+        <td class="course os" rowspan="3" ng-click="openModal(mon_courses[2])">COMP2432</td>
+    </tr>
+    <tr>
+        <td class="period">09:30</td>
+        <td class="course vi" rowspan="2" ng-click="openModal(mon_courses[1])">COMP2422</td>
+        <td class="course wc" rowspan="3" ng-click="openModal(mon_courses[7])">HTM1C06</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="period">10:30</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="period">11:30</td>
+        <td class="course os" ng-click="openModal(mon_courses[9])">COMP2432</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="period">12:30</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="course network" rowspan="3" ng-click="openModal(mon_courses[10])">COMP2322</td>
+    </tr>
+    <tr>
+        <td class="period">13:30</td>
+        <td></td>
+        <td class="course db" ng-click="openModal(mon_courses[5])">COMP2411</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="period">14:30</td>
+        <td class="course cm" rowspan="2" ng-click="openModal(mon_courses[6])">COMP3422</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="period">15:30</td>
+        <td class="course cm" ng-click="openModal(mon_courses[3])">COMP3422</td>
+        <td></td>
+        <td class="course vi" ng-click="openModal(mon_courses[8])">COMP2422</td>
+        <td></td>
+    </tr>
+</table>
+
+</div>
+
+
+
+</ion-content>
+</ion-view>

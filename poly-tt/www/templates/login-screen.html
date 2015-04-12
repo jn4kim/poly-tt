@@ -1,0 +1,48 @@
+
+<ion-view title="LOGIN">
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+<ion-content padding="true" scroll="true" ng-controller="LoginCtrl">
+
+	
+	<div style="text-align: center; font-size: 9pt" ng-bind-html="status_message">
+	</div>
+
+	<div class="list list-inset" style="margin-top:8px;">
+		<label class="item item-input">
+			<i class="fa fa-user icon-margin"></i>
+			<input id="studentid" type="text" placeholder="Student ID" ng-model="username" ng-disabled="logging">
+		</label>
+		<label class="item item-input">
+			<i class="fa fa-lock icon-margin"></i>
+			<input id="password" type="password" placeholder="Password" ng-model="password" ng-disabled="logging">
+		</label>
+	</div>
+
+	<div class="list list-inset" >
+		<li class="item item-toggle" style="font-size: 10pt;">
+			Keep me logged in
+			<label class="toggle toggle-positive">
+				<input type="checkbox" ng-disabled="logging">
+				<div class="track">
+					<div class="handle"></div>
+				</div>
+			</label>
+		</li>
+
+	</div>
+
+	<div class="button button-block button-positive" ng-click="login()" data-ng-bind-html="login_status" ng-disabled="!(username.length && password.length) || logging">
+	</div>
+
+
+
+
+
+
+</ion-content>
+</ion-view>
+
