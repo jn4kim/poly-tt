@@ -11,7 +11,6 @@ angular.module('polyu-scheduler.controllers', [])
 
 
 	// SKIP THE LOGIN * TO BE DELETED LATER
-$location.path('/tab/timetable')
 
 	$scope.login = function(){
 
