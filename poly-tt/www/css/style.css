@@ -1,7 +1,10 @@
-.body{
+body{
 	font-family: 'Oswald';
 }
 
+.popup-title{
+	font-family: 'Oswald';
+}
 
 
 .home-screen{
@@ -312,3 +315,19 @@ table td:active{
 .ttble{
 	width: 100%;
 }
+
+.reminder-card{
+	padding: 0px;
+	font-family: 'Oswald';
+	font-weight: 300;
+}
+
+.horizontal-bar{
+	height: 8px;
+	width: 100%;
+}
+
+.reminder-course{
+	color: white;
+}
+

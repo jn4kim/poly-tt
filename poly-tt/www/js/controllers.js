@@ -47,6 +47,141 @@ $location.path('/tab/timetable')
 })
 
 
+.controller('ShareCtrl', function($timeout, $scope, $ionicHistory, $ionicPopover, $ionicPopup){
+    $ionicHistory.clearHistory()
+
+    document.body.classList.remove('platform-ios');
+    document.body.classList.remove('platform-android');
+
+    $ionicPopover.fromTemplateUrl('templates/popover-share.html', {
+        scope: $scope,
+    }).then(function(popover) {
+        $scope.popover = popover;
+    });
+
+    $scope.myrequest = ["13101783D"]
+
+$scope.showPopup = function() {
+   $scope.data = {}
+
+   // An elaborate, custom popup
+   var myPopup = $ionicPopup.show({
+     template: '<input type="text" ng-model="data.id">',
+     title: 'Enter Friend\'s eStudent ID',
+     scope: $scope,
+     buttons: [
+       { text: 'Cancel' },
+       {
+         text: '<b>OK</b>',
+         type: 'button-positive',
+         onTap: function(e) {
+           if (!$scope.data.id) {
+             //don't allow the user to close unless he enters wifi password
+             e.preventDefault();
+           } else {
+             return $scope.data.id;
+           }
+         }
+       },
+     ]
+   });
+   myPopup.then(function(res) {
+     console.log('Tapped!', res);
+   });
+   $timeout(function() {
+      myPopup.close(); //close the popup after 3 seconds for some reason
+   }, 3000);
+  };
+
+
+
+})
+
+
+
+.controller('NotifiCtrl', function($scope, $ionicModal, $ionicPopup, $ionicHistory){
+    $ionicHistory.clearHistory()
+
+    $scope.notifications = [
+    {
+        "course_name": "VISUAL INTERFACE AND DESIGN",
+        "todo": "Finish the project prototype",
+        "date": "TODAY",
+        "done": false,
+        "color":"#009688"
+    },
+    {
+        "course_name": "COMPUTER NETWORKING",
+        "todo": "Project Demonstration",
+        "date": "TOMORROW",
+                "done": false,
+        "color":"#F44336"
+    },
+    {
+        "course_name": "DATABASE SYSTEMS",
+        "todo": "Project Presentation",
+        "date": "APRIL, 24th, 2015",
+                "done": false,
+        "color": "#FF9800"
+    },
+    {
+        "course_name": "OPERATING SYSTEM",
+        "todo": "Final Examination",
+        "date": "MAY, 5th, 2015",
+                "done": false,
+        "color": "#2196F3"
+    }
+    ];
+
+    $scope.showConfirm = function(notif){
+       var confirmPopup = $ionicPopup.confirm({
+         title: 'Are you done with that?',
+         template: notif.todo
+     });
+       confirmPopup.then(function(res) {
+         if(res) {
+           console.log('You are sure');
+           notif.done = true;
+
+       } else {
+           console.log('You are not sure');
+       }
+   });
+   };
+
+
+    /* MODAL */
+    $ionicModal.fromTemplateUrl('templates/modal-create-reminder.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal
+    })
+
+    
+    $scope.selected_course
+    $scope.openModal = function(course) {
+        $scope.modal.show()
+        $scope.selected_course = course;
+
+    }
+
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+
+
+$scope.data = {};
+$scope.data.date = new Date().toDateString();
+
+
+
+
+
+
+})
+
+
 
 .controller('TableCtrl', function($scope, $ionicModal, $timeout, $window, $ionicHistory, $ionicPopover, $ionicSlideBoxDelegate){
 	$ionicHistory.clearHistory()
@@ -88,7 +223,7 @@ $location.path('/tab/timetable')
     $scope.current_daycode = "Mon"
 
     $scope.mon_courses = [
-    {
+    {//0
     	"course_code":"COMP2322",
     	"course_name":"COMPUTER NETWORKING",
     	"type":"LAB002",
@@ -99,7 +234,7 @@ $location.path('/tab/timetable')
     	"staff":"Xiao Bin",
     	"color":"#F44336"
     },
-    {
+    {//1
     	"course_code":"COMP2422",
     	"course_name":"VISUAL INTERFACE",
     	"type":"LEC001",
@@ -110,7 +245,7 @@ $location.path('/tab/timetable')
     	"staff":"Cheung King Hong",
     	"color":"#009688"
     },
-    {
+    {//2
     	"course_code":"COMP2432",
     	"course_name":"OPERATING SYSTEMS",
     	"type":"LAB002",
@@ -121,7 +256,7 @@ $location.path('/tab/timetable')
     	"staff":"Mak Alvin",
     	"color":"#2196F3"
     },
-    {
+    {//3
     	"course_code":"COMP3422",
     	"course_name":"CREATIVE DIGITAL ",
     	"type":"LEC001",
@@ -132,7 +267,7 @@ $location.path('/tab/timetable')
     	"staff":"Ngai Grace",
     	"color":"#E91E63"
     },
-    {
+    {//4
     	"course_code":"COMP2411",
     	"course_name":"DATABASE SYSTEMS",
     	"type":"LEC001",
@@ -143,7 +278,7 @@ $location.path('/tab/timetable')
     	"staff":"Ng Vincent To Yee",
     	"color":"#FF9800"
     },
-    {
+    {//5
     	"course_code":"COMP2411",
     	"course_name":"DATABASE SYSTEMS",
     	"type":"LAB001",
@@ -154,7 +289,7 @@ $location.path('/tab/timetable')
     	"staff":"Chiu Wai Han Memory",
     	"color":"#FF9800"
     },
-    {
+    {//6
     	"course_code":"COMP3422",
     	"course_name":"CREATIVE DIGITAL",
     	"type":"TUT001",
@@ -165,7 +300,7 @@ $location.path('/tab/timetable')
     	"staff":"Ngai Grace",
     	"color":"#E91E63"
     },
-    {
+    {//7
     	"course_code":"HTM1C06",
     	"course_name":"THE EVOLUTION OF WORLD CUISINE",
     	"type":"LEC001",
@@ -176,7 +311,7 @@ $location.path('/tab/timetable')
     	"staff":"Martin Bugler",
     	"color":"#33691E"
     },
-    {
+    {//8
     	"course_code":"COMP2422",
     	"course_name":"VISUAL INTERFACE  ",
     	"type":"TUT001",
@@ -187,7 +322,7 @@ $location.path('/tab/timetable')
     	"staff":"Cheung King Hong",
     	"color":"#009688"
     },
-    {
+    {//9
     	"course_code":"COMP2432",
     	"course_name":"OPERATING SYSTEMS",
     	"type":"LEC001",
@@ -198,7 +333,7 @@ $location.path('/tab/timetable')
     	"staff":"Leong Hong Va",
     	"color":"#2196F3"
     },
-    {
+    {//10
     	"course_code":"COMP2322",
     	"course_name":"COMPUTER NETWORKING",
     	"type":"LEC001",
@@ -245,6 +380,7 @@ $location.path('/tab/timetable')
 
 	$scope.closeModal = function() {
 		$scope.modal.hide();
+        $scope.modal2.hide();
 	};
 
 	$scope.$on('$destroy', function() {
@@ -263,5 +399,28 @@ $location.path('/tab/timetable')
             return "hiding";
         }
     }
+
+
+
+
+        /* MODAL */
+    $ionicModal.fromTemplateUrl('templates/modal-create-reminder.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal2 = modal
+    })
+
+    $scope.openModal2 = function(course) {
+        $scope.modal2.show()
+        $scope.selected_course = course;
+
+    }
+
+    $scope.closeModal2 = function() {
+        $scope.modal2.hide();
+    };
+
+
 
 })

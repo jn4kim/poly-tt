@@ -1,0 +1,43 @@
+ <div class="modal">
+  <ion-header-bar class="bar-light">
+  <h1 class="title">ADD REMINDER</h1>
+<button class="button button-clear button-positive" ng-click="closeModal()">OK</button>
+</ion-header-bar>
+<ion-content>
+<div class="list">
+  <label class="item item-input item-select">
+    <div class="input-label">
+      COURSE
+    </div>
+    <select>
+      <option seleced>NON-COURSE</option>
+      <option>COMPUTER NETWORKING</option>
+      <option>VISUAL INTERFACE</option>
+      <option>OPERATING SYSTEMS</option>
+      <option>CREATIVE DIGITAL</option>
+       <option>DATABASE SYSTEMS</option>
+       <option>OPERATING SYSTEMS</option>
+    </select>
+  </label>
+
+
+<label class="item item-input item-stacked-label">
+    <span class="input-label">DATE</span>
+    <input type="text" placeholder="{{data.date}}">
+  </label>
+
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">TO DO</span>
+    <input type="text" placeholder="Study for ..">
+  </label>
+
+</div>
+
+
+</ion-content>
+
+
+
+</div>
+
